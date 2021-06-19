@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyGame</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home_fragment">已量測完所有數據，可以開始抽獎了！</string>
+    <string name="my_game_title_text">試試手氣！！！</string>
+</resources>
