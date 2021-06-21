@@ -2,7 +2,6 @@ package com.example.android.mygame
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -12,8 +11,8 @@ class MyGameView : ConstraintLayout {
     interface MyCallback{
         fun onPrizeSelected(prize: Prize, drawTimes: Int)
     }
-    private lateinit var callback : MyCallback
-    private lateinit var prizes : List<Prize>
+    private var callback : MyCallback? = null
+    private var prizes = mutableListOf<Prize>()
     private var imgBtn1 : ImageButton
     private var imgBtn2 : ImageButton
     private var imgBtn3 : ImageButton
@@ -29,7 +28,7 @@ class MyGameView : ConstraintLayout {
         imgBtn4 = findViewById(R.id.img4)
         setListeners()
         if (attrs != null) {
-            val attributes = context.theme.obtainStyledAttributes(
+            context.theme.obtainStyledAttributes(
                     attrs,
                     R.styleable.MyGameView,
                     0, 0
@@ -50,23 +49,25 @@ class MyGameView : ConstraintLayout {
             item.setOnClickListener{
                     drawTimes++
                     val prize = drawPrize()
-                    callback.onPrizeSelected(prize, drawTimes)
+                    callback?.onPrizeSelected(prize, drawTimes)
             }
         }
     }
     fun setPrizes(prizes : List<Prize>){
-        this.prizes = prizes
+        this.prizes.clear()
+        this.prizes.addAll(prizes)
     }
     private fun drawPrize() : Prize {
-        val randomProb = mutableListOf<Int>()
+        val randomProb: MutableList<Int> = mutableListOf()
         for(item in prizes){
             val x = Random().nextInt((item.probability*10000).toInt())
             randomProb.add(x)
         }
-        for(item in randomProb){
-            Log.e("randomP", "${item}")
+        if(prizes.isEmpty()){
+            throw(IndexOutOfBoundsException("Need to setPrizes() first."))
         }
         return prizes[randomProb.indexOf(randomProb.maxOrNull())]
+
     }
 
 }
