@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.findNavController
+import com.example.android.mygamelibrary.MyGameView
+import com.example.android.mygamelibrary.Prize
 
 class PlayGameFragment : Fragment() {
     override fun onCreateView(

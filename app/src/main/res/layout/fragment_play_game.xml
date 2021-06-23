@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PlayGameFragment">
-    <com.example.android.mygame.MyGameView
+    <com.example.android.mygamelibrary.MyGameView
         android:id="@+id/my_game"
         android:layout_width="0dp"
         android:layout_height="0dp"
