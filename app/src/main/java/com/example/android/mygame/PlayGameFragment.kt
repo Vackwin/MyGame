@@ -24,18 +24,21 @@ class PlayGameFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val game = requireView().findViewById<MyGameView>(R.id.my_game)
-        val bmpA : Bitmap = BitmapFactory.decodeResource(resources,android.R.drawable.alert_dark_frame )
-        val bmpB : Bitmap = BitmapFactory.decodeResource(resources,android.R.drawable.alert_light_frame)
+        val bmpA : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize2)
+        val bmpB : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize3)
+        val bmpC : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize)
         val view = requireView()
         val imgTrophy = view.findViewById<ImageView>(R.id.img_trophy)
         val tv = view.findViewById<TextView>(R.id.tv)
         val tvTry = view.findViewById<TextView>(R.id.tv_try)
-        val maxDrawTimes = 2
+        val tvTry2 = view.findViewById<TextView>(R.id.tv_try2)
+        val maxDrawTimes = 1
         val callback = object : MyGameView.MyCallback {
             override fun onPrizeSelected(prize: Prize, drawTimes: Int) {
                 imgTrophy.visibility = View.VISIBLE
                 tv.visibility = View.VISIBLE
                 tvTry.visibility = View.INVISIBLE
+                tvTry2.visibility = View.INVISIBLE
                 view.setOnClickListener {
                     if(drawTimes >= maxDrawTimes){
                         it.findNavController().navigate(R.id.action_playGameFragment_to_homeFragment)
@@ -43,6 +46,7 @@ class PlayGameFragment : Fragment() {
                     imgTrophy.visibility = View.INVISIBLE
                     tv.visibility = View.INVISIBLE
                     tvTry.visibility = View.VISIBLE
+                    tvTry2.visibility = View.VISIBLE
                     game.hidePrize()
                     game.showUi()
                 }
@@ -50,8 +54,9 @@ class PlayGameFragment : Fragment() {
         }
         game.setPrizes(
                 listOf(
-                        Prize(0.5F,bmpB,"白方","白色方塊"),
-                        Prize(0.5F,bmpA,"黑方","黑色方塊")
+                        Prize(0.5F,bmpA,"Yellow\nStar","$199.0"),
+                        Prize(0.3F,bmpB,"Orange\nStar","$299.0"),
+                        Prize(0.2F,bmpC,"Apple\nWatch","From $399.0")
                 )
         )
         game.setCallback(callback)

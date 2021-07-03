@@ -11,10 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/hello_home_fragment"
-        android:textSize="24dp"/>
+        android:textSize="24dp"
+        android:textColor="@color/white" />
     <Button
         android:id="@+id/play_game_button"
         android:layout_width="wrap_content"
@@ -22,6 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/home_tv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
         android:text="開始抽獎"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

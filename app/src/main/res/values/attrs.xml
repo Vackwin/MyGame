@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="MyGameView">
-        <attr name="backgroundColor" format="color"/>
-        <attr name="title" format="string"/>
-        <attr name="max_draw_times" format="integer"/>
-    </declare-styleable>
-</resources>
