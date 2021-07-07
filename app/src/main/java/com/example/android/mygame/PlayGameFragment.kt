@@ -26,7 +26,7 @@ class PlayGameFragment : Fragment() {
         val game = requireView().findViewById<MyGameView>(R.id.my_game)
         val bmpA : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize2)
         val bmpB : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize3)
-        val bmpC : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize)
+        val bmpC : Bitmap = BitmapFactory.decodeResource(resources,R.drawable.sampleprize1)
         val view = requireView()
         val imgTrophy = view.findViewById<ImageView>(R.id.img_trophy)
         val tv = view.findViewById<TextView>(R.id.tv)
@@ -54,8 +54,8 @@ class PlayGameFragment : Fragment() {
         }
         game.setPrizes(
                 listOf(
-                        Prize(0.5F,bmpA,"Yellow\nStar","$199.0"),
-                        Prize(0.3F,bmpB,"Orange\nStar","$299.0"),
+                        Prize(0.5F,bmpB,"Yellow\nStar","$199.0"),
+                        Prize(0.3F,bmpA,"Orange\nStar","$299.0"),
                         Prize(0.2F,bmpC,"Apple\nWatch","From $399.0")
                 )
         )
