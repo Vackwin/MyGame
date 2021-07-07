@@ -6,16 +6,19 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PlayGameFragment">
+
     <ImageView
         android:id="@+id/img_trophy"
-        android:src="@drawable/trophy4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintVertical_bias="0.12"
+        android:src="@drawable/ic_trophy_4"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="160dp"
-        android:visibility="invisible"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/tv_try"
@@ -27,7 +30,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -35,8 +38,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/tv_try"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv"
-        android:layout_marginStart="5dp"
+        app:layout_constraintHorizontal_bias="0.038"
         android:text="@string/try2"
         android:textSize="24sp"
         android:textColor="@color/white" />
@@ -45,13 +49,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@+id/img_trophy"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/img_trophy"
+        app:layout_constraintBottom_toBottomOf="@id/img_trophy"
         android:text="@string/congratulations"
         android:textSize="27sp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.25"
         android:visibility="invisible"/>
     <com.example.android.mygamelibrary.MyGameView
         android:id="@+id/my_game"
